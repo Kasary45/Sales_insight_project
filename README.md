@@ -1,43 +1,46 @@
-## Sales Insights Data Analysis Project
+<h1 align="center" id="title">Sales Insights Data Analysis Project</h1>
 
-### Data Analysis Using SQL
+<p align="center"><img src="https://socialify.git.ci/Kasary45/Sales_insight_project/image?font=Source%20Code%20Pro&amp;name=1&amp;pattern=Charlie%20Brown&amp;theme=Dark" alt="project-image"></p>
 
-1. Show all customer records
+<p align="center" id="description">This project provides an in-depth analysis of sales data using Tableau, showcasing key insights into revenue trends, customer behavior, and product performance. The dashboard enables stakeholders to make data-driven decisions by visualizing sales metrics across dimensions such as time, geography, and customer demographics.</p>
 
-    `SELECT * FROM customers;`
+---
 
-1. Show total number of customers
+<h2 align="center">🚀 Demo</h2>
 
-    `SELECT count(*) FROM customers;`
+<p align="center">
+<a href="https://public.tableau.com/app/profile/yogesh.kasar8506/viz/Case_study_17172161359970/NorthwindTradersDashboard" target="_blank">
+    <img src="https://img.shields.io/badge/View%20Demo-Tableau-3498db?style=for-the-badge&logo=tableau&logoColor=white" alt="Tableau Demo">
+</a>
+</p>
 
-1. Show transactions for Chennai market (market code for chennai is Mark001
+---
 
-    `SELECT * FROM transactions where market_code='Mark001';`
+<h2>🧐 Features</h2>
 
-1. Show distrinct product codes that were sold in chennai
+- **Revenue Analysis**: Drill down by time period, location, and product category to identify top-performing segments.
+- **Customer Segmentation**: Identify high-value and frequent buyers, offering insights for personalized marketing.
+- **Sales Trends**: Visualize sales patterns and seasonality to optimize inventory and promotions.
+- **Product Performance**: Track best-selling and underperforming products to improve stock management.
 
-    `SELECT distinct product_code FROM transactions where market_code='Mark001';`
+---
 
-1. Show transactions where currency is US dollars
+<h2>💻 Built with</h2>
 
-    `SELECT * from transactions where currency="USD"`
+- **Database**: MySQL – to store and manage raw sales data.
+- **Data Visualization**: Tableau – to create interactive dashboards for data insights.
 
-1. Show transactions in 2020 join by date table
+---
 
-    `SELECT transactions.*, date.* FROM transactions INNER JOIN date ON transactions.order_date=date.date where date.year=2020;`
+<h2>📂 Project Structure</h2>
 
-1. Show total revenue in year 2020,
+```plaintext
+Sales_Insights_Project/
+├── data/                    # Raw sales data and other datasets used in analysis
+├── tableau_dashboard/       # Tableau workbooks and packaged dashboards
+├── README.md                # Project documentation
+└── assets/                  # Images or visuals used in the README or documentation
 
-    `SELECT SUM(transactions.sales_amount) FROM transactions INNER JOIN date ON transactions.order_date=date.date where date.year=2020 and transactions.currency="INR\r" or transactions.currency="USD\r";`
-	
-1. Show total revenue in year 2020, January Month,
-
-    `SELECT SUM(transactions.sales_amount) FROM transactions INNER JOIN date ON transactions.order_date=date.date where date.year=2020 and and date.month_name="January" and (transactions.currency="INR\r" or transactions.currency="USD\r");`
-
-1. Show total revenue in year 2020 in Chennai
-
-    `SELECT SUM(transactions.sales_amount) FROM transactions INNER JOIN date ON transactions.order_date=date.date where date.year=2020
-and transactions.market_code="Mark001";`
 
 
 
